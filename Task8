@@ -1,0 +1,24 @@
+#include<stdio.h>
+union Data{
+    int i;
+    float f;
+    char ch;
+};
+int main(){
+    union Data d;
+    d.i = 5;
+    printf("%d  ",d.i);
+    printf("%f  ",d.f);
+    printf("%c\n",d.ch);
+
+    d.f = 3.14;
+    printf("%d  ",d.i);
+    printf("%f  ",d.f);
+    printf("%c\n",d.ch);
+
+    d.ch = 'A';
+    printf("%d  ",d.i);
+    printf("%f  ",d.f);
+    printf("%c\n",d.ch);
+    return 0;
+}
