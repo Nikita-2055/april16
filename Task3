@@ -1,0 +1,27 @@
+#include<stdio.h>
+typedef struct{
+    int age;
+    char name[30];
+    float mark;
+}Student;
+int main(){
+    Student studens[5];
+    for(int i = 0; i < 5; ++i){
+        printf("input name:");
+        scanf("%s",studens[i].name);
+        printf("input age:");
+        scanf("%d",&studens[i].age);
+        printf("input mark:");
+        scanf("%f",&studens[i].mark);
+    }
+    float max = studens[0].mark;
+    int index = 0;
+    for(int i = 0; i < 5; ++i){
+        if(max < studens[i].mark){
+            max = studens[i].mark;
+            index = i;
+        }
+    }
+    printf("Highest marks: %s %d %f\n",studens[index].name,studens[index].age,studens[index].mark);
+    return 0;
+}
