@@ -1,0 +1,27 @@
+#include<stdio.h>
+typedef struct{
+    int year;
+    char title[50];
+    char author[30];
+}Book;
+int main(){
+    Book books[4];
+    for(int i = 0; i < 4; ++i){
+        printf("input title:");
+        scanf("%s",books[i].title);
+        printf("input author:");
+        scanf("%s",books[i].author);
+        printf("input year:");
+        scanf("%d",&books[i].year);
+    }
+    int old = books[0].year;
+    int index = 0;
+    for(int i = 0; i < 4; ++i){
+        if(old > books[i].year){
+            old = books[i].year;
+            index = i;
+        }
+    }
+    printf("Old book: %s %s %d\n",books[index].title,books[index].author,books[index].year);
+    return 0;
+}
