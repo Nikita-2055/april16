@@ -1,0 +1,14 @@
+#include<stdio.h>
+union Value{
+    int i;
+    float f;
+};
+int main(){
+    union Value v;
+    v.i = 15;
+    printf("%d  ",v.i);
+    v.f = 10.25;
+    printf("%.1f  ",v.f);
+    printf("size of union %zu baits\n",sizeof(v));
+    return 0;
+}
