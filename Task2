@@ -1,0 +1,39 @@
+#include<stdio.h>
+typedef struct{
+    int year;
+    float price;
+    char brend[20];
+    char model[20];
+}Car;
+
+int main(){
+    Car cars[3];
+    for(int i = 0; i < 3; ++i){
+        printf("input brend:");
+        scanf("%s",cars[i].brend);
+        printf("input model:");
+        scanf("%s",cars[i].model);
+        printf("input year:");
+        scanf("%d",&cars[i].year);
+        printf("input price:");
+        scanf("%f",&cars[i].price);
+    }
+
+    float lower = cars[0].price;
+    int nowest = cars[0].year;
+    int index1 = 0;
+    int index2 = 0;
+    for(int i = 1; i < 3; ++i){
+        if(lower > cars[i].price){
+            lower = cars[i].price;
+            index1 = i;
+        }
+        if(nowest < cars[i].year){
+            nowest = cars[i].year;
+            index2 = i;
+        }
+    }
+    printf("chepest: %s %s %d %f\n",cars[index1].brend,cars[index1].model,cars[index1].year,cars[index1].price);
+    printf("newest: %s %s %d %f\n",cars[index2].brend,cars[index2].model,cars[index2].year,cars[index2].price);
+    return 0;
+}
