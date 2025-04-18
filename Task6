@@ -1,0 +1,19 @@
+#include<stdio.h>
+typedef struct{
+    float price;
+    char brend[20];
+    char model[20];
+}Car;
+int main(){
+    Car cars[2];
+    for(int i = 0; i < 2; ++i){
+        printf("input brend,model,price: ");
+        scanf("%s %s %f",cars[i].brend,cars[i].model,&cars[i].price);
+    }
+    if(cars[0].price > cars[1].price){
+        printf("expensiv car is: %s %s %f\n",cars[0].brend,cars[0].model,cars[0].price);
+    }else{
+        printf("expensiv car is: %s %s %f\n",cars[1].brend,cars[1].model,cars[1].price);
+    }
+    return 0;
+}
